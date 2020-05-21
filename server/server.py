@@ -145,7 +145,7 @@ def tb_add_histogram(experiment, name, wall_time, step, histo):
 
 # Perform requests to tensorboard http api
 def tb_request(query_type, run=None, tag=None, safe=True):
-  request_url = "http://localhost:8888/data/{}"
+  request_url = "http://localhost:9999/data/{}"
   if run and tag:
     request_url += "?run={}&tag={}"
 
