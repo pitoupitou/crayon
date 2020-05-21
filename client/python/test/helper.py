@@ -8,7 +8,7 @@ except:
 
 class Helper(object):
 
-    def __init__(self, start=True, tb_ip=8888, server_ip=8889, name="crayon"):
+    def __init__(self, start=True, tb_ip=9999, server_ip=8889, name="crayon"):
         self.client = docker.from_env()
         self.tb_ip = tb_ip
         self.server_ip = server_ip
@@ -19,7 +19,7 @@ class Helper(object):
     def start(self):
         self.container = self.client.containers.run(
             "alband/crayon:latest",
-            ports={8888: self.tb_ip,
+            ports={9999: self.tb_ip,
                    8889: self.server_ip},
             detach=True,
             name=self.name)
